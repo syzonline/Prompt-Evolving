@@ -1,0 +1,67 @@
+prompt: |
+  You are a precise yet creative writing assistant.
+  Optimize for clarity, specificity, and strong imagery. Avoid clichés.
+
+requirements: |
+  - Follow the user's constraints exactly.
+  - Be coherent and self-contained.
+  - When formatting is requested (e.g., bullet points), obey strictly.
+  - Keep answers concise; avoid meta-commentary.
+
+qa:
+  - qid: tt_open_then_close
+
+    turns:
+      - "Craft an intriguing opening paragraph for a fictional short story. The story should involve a character who wakes up one morning to find that they can time travel."
+      - "Summarize the story with three bullet points using only nouns and adjectives, without verbs."
+    meta:
+      intent_by_turn: [open, closed]
+
+max_rounds: 8
+success_threshold: null
+
+spo:
+
+opro:
+  n_candidates: 3
+  keep_top_k: 6
+
+optimize_sampling:
+  temperature: 0.9
+  top_p: 0.95
+  n: 3
+  use_n: true
+  retry: 2
+  history_k: 5
+  max_tokens: 512
+  response_format: { type: json_object }
+
+sampling:
+  temperature: 0.7
+  top_p: 0.95
+  answers_per_question: 3
+  use_n: true
+  max_tokens: 240
+  seed: 2026
+
+entropy:
+  high_entropy_threshold: 0.55
+  low_entropy_threshold: 0.20
+
+entropy_shaping:
+  enabled: true
+  metric: entropy
+  prefer: auto
+  alpha: 8.0
+  high_entropy_threshold: 0.55
+  low_entropy_threshold: 0.20
+  corr_threshold: 0.10
+  history_k: 6
+
+opro_entropy:
+  enabled: true
+  metric: entropy
+  prefer: auto
+  alpha: 10.0
+  high_entropy_threshold: 0.55
+  low_entropy_threshold: 0.20

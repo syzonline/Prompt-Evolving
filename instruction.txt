@@ -1,0 +1,7 @@
+To run the project, first, run:
+python scripts/validate_endpoints.py --config config/models.yaml
+
+Then, run:
+sh run.sh
+
+Before your run, configuration on settings/sample_task.yaml is necessary.

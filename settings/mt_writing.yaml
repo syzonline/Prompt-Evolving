@@ -1,0 +1,129 @@
+# MT-Bench Writing subset (10 questions) — single-turn friendly
+
+# ---- shared defaults (apply to all items unless overridden) ----
+requirements: |
+  - Follow the specific constraints in each question first; general tips are secondary.
+  - Keep the response organized with brief headings when the task includes A→B rewriting.
+  - Use exactness over filler; avoid safety/policy violations and personal data.
+  - If multiple options are requested, ensure diversity and non-trivial variation.
+  - When rewriting B depends on A, rewrite rather than analyze A; don’t explain unless asked.
+
+count: 10
+
+qa:
+  - question: |
+      Task A: Compose an engaging travel blog post about a recent trip to Hawaii, highlighting cultural experiences and must-see attractions.
+      Task B: Rewrite your previous response. Start every sentence with the letter A.
+      Output format: 
+      Part 1 — First Pass:
+      Part 2 — Revision:
+    answer: ""
+
+  - question: |
+      Task A: Draft a professional email seeking your supervisor's feedback on the “Quarterly Financial Report” you prepared. Ask specifically about the data analysis, presentation style, and clarity of conclusions. Keep it brief.
+      Task B: Evaluate and concisely critique your own email from Part 1.
+      Output format:
+      Part 1 — First Pass:
+      Part 2 — Revision:
+    answer: ""
+
+  - question: |
+      Task A: Imagine you are writing a blog post comparing two popular smartphone models. Develop an outline (key points + subheadings) to compare features, performance, and user experience. ≤200 words.
+      Task B: Rephrase your outline from Part 1 as a limerick.
+      Output format:
+      Part 1 — First Pass:
+      Part 2 — Revision:
+    answer: ""
+
+  - question: |
+      Task A: Write a persuasive email to convince your introverted friend (who dislikes public speaking) to volunteer as a guest speaker at a local event. Address objections; be concise.
+      Task B: Rephrase your email from Part 1 and include a metaphor or simile in EACH sentence.
+      Output format:
+      Part 1 — First Pass:
+      Part 2 — Revision:
+    answer: ""
+
+  - question: |
+      Task A: Describe a vivid and unique character using strong imagery and creative language (≤2 paragraphs).
+      Task B: Revise your Part 1 description and incorporate an allusion to a famous literary work or historical event in EACH sentence.
+      Output format:
+      Part 1 — First Pass:
+      Part 2 — Revision:
+    answer: ""
+
+  - question: |
+      Task A: Write a descriptive paragraph about a bustling marketplace with sensory detail (smell, sound, visual) for immersion.
+      Task B: Rework your paragraph so each sentence starts with consecutive letters of the alphabet beginning from B (e.g., B..., C..., D..., ...).
+      Output format:
+      Part 1 — First Pass:
+      Part 2 — Revision:
+    answer: ""
+
+  - question: |
+      Task A: Write a captivating short story opening beginning with: “The old abandoned house at the end of the street held a secret that no one had ever discovered.”
+      Task B: Do the same story but ONLY use four-word sentences.
+      Output format:
+      Part 1 — First Pass:
+      Part 2 — Revision:
+    answer: ""
+
+  - question: |
+      Task A: Craft an intriguing opening paragraph for a story where a character wakes up and can time travel.
+      Task B: Summarize the story concept with three bullet points using ONLY nouns and adjectives (no verbs).
+      Output format:
+      Part 1 — First Pass:
+      Part 2 — Revision:
+    answer: ""
+
+  - question: |
+      Task A: Propose 4 catchy yet scientifically accurate headlines for an article on a new discovery in renewable bio-energy; be mindful of ethical dilemmas.
+      Task B: Modify the SECOND headline to sound casual, embed an ad for a company called “FlexPower”, and keep it under 10 words.
+      Output format:
+      Part 1 — First Pass:
+      Part 2 — Revision:
+    answer: ""
+
+  - question: |
+      Task A: Edit the paragraph to correct grammar:
+      “She didn't remembre where is her purse, so I thinks its in the car but he's say it's on kitchen table but he are not sure, and then they asked me to looking for it, she's say, ‘Can you?’, and I responds with, ‘Maybe, but ain't no sure,’ and he not heard me, and, ‘What?’, he asks, ‘Did you found it?’.”
+      Task B: Modify your corrected paragraph to ELIMINATE gendered pronouns.
+      Output format:
+      Part 1 — First Pass:
+      Part 2 — Revision:
+    answer: ""
+
+# ---- knobs (shared across the batch unless overridden in prompts[]) ----
+max_rounds: 6
+opro:
+  n_candidates: 3
+  keep_top_k: 5
+spo:
+  accept_on_tie: false
+
+sampling:
+  answers_per_question: 8
+  use_n: true
+  temperature: 0.8
+  top_p: 0.95
+
+# OPRO+Entropy shaping
+opro_entropy:
+  enabled: true
+  alpha: 10.0
+  metric: "entropy"
+  prefer: "auto"         # will resolve to "open" via "open-ended" keyword in the prompt
+  high_entropy_threshold: 0.55
+  low_entropy_threshold: 0.20
+
+# ---- explicit prompts list (each item spawns a subproject) ----
+prompts:
+  - id: mt_writing_base
+    prompt: |
+      You are an award-winning writing coach and concise editor.
+      For each task, strictly follow the given instructions. If the question has TWO parts
+      (A then B), produce both in one reply with clear headings:
+      "Part 1 — First Pass:" then "Part 2 — Revision:".
+      Prefer precise, vivid, reader-friendly prose. Keep claims grounded; avoid hallucinated facts.
+      If a format or constraint is specified (e.g., limerick, alliteration, alphabetical starts),
+      that local constraint OVERRIDES general style guidance.
+      These are open-ended / creative writing tasks.

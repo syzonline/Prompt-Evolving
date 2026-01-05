@@ -1,0 +1,57 @@
+# Global requirements for the judge (used if a group doesn't override)
+requirements: |
+  Evaluate answers for factual accuracy, completeness, and clarity.
+  Prefer concise, correct answers. For math, verify steps and final result.
+
+# Optional per-group weights for a weighted macro average (default weight=1.0)
+groups:
+  - name: factual_qa
+    weight: 1.0
+    # Optional: override the global requirements for this group only
+    requirements: |
+      Focus on factual correctness and sourcing.
+    qa:
+      - id: f1
+        question: "What is the capital of Japan?"
+      - id: f2
+        question: "When did the Apollo 11 Moon landing occur?"
+  - name: math_qa
+    weight: 1.0
+    requirements: |
+      Prioritize correct reasoning and exact final answer.
+    qa:
+      - id: m1
+        question: "Compute the derivative of x^2 + 3x + 1."
+      - id: m2
+        question: "Evaluate 17 * 23."
+  - name: open_ended
+    weight: 1.0
+    requirements: |
+      Prioritize coherence, helpfulness, and coverage.
+    qa:
+      - id: o1
+        question: "Give three strategies to improve code review quality."
+      - id: o2
+        question: "Summarize the benefits and drawbacks of unit tests."
+
+max_rounds: 8
+opro:
+  n_candidates: 16
+  keep_top_k: 5
+spo:
+  accept_on_tie: false
+
+sampling:
+  answers_per_question: 8
+  use_n: true
+  temperature: 0.2
+  top_p: 0.0.8
+
+# OPRO+Entropy shaping (parallel)
+opro_entropy:
+  enabled: true
+  alpha: 10.0
+  metric: "entropy"
+  prefer: "auto"
+  high_entropy_threshold: 0.55
+  low_entropy_threshold: 0.20

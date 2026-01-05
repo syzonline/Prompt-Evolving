@@ -1,0 +1,41 @@
+dialogue_mode: continuous
+max_rounds: 4
+
+system_prompt: |
+  You are a helpful assistant.
+
+sampling:
+  candidates_per_turn: 6
+  answers_per_question: 3
+
+entropy:
+  enabled: true
+  alpha: 20.0
+  metric: diversity
+  corr_threshold: 0.05
+  history_k: 12
+
+entropy_overrides:
+  by_turn:
+    "0": open
+    "1": closed
+
+ranking:
+  beta_shaped: 1.0
+  beta_feature: 0.35
+  beta_raw: 0.15
+  prefer_none_feature_boost: 0.5
+  jitter_eps: 0.001
+  pairing_strategy: snake
+
+judge:
+  use_context: true
+
+opro_history_scope: run
+
+# Example QA payload (if you load from file, keep this shape)
+qa:
+  - qid: ex
+    turns:
+      - "Write a travelogue about a fantasy trip to Disney."
+      - "Rank your Disney trip by a score from 1 to 10, and explain why you gave that score."
