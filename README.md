@@ -151,6 +151,29 @@ python -m scripts.run_optimizer \
 
 If `--mtbench-dir` already contains cached `mt_bench_<split>.jsonl`, it is loaded directly (no re-download).
 
+
+### One-command MT-Bench suite (Original / SPO / OPRO / Ours)
+
+Use `scripts/run_mtbench_suite.py` to run four strategies with a single command:
+
+```bash
+python -m scripts.run_mtbench_suite \
+  --template writing-demo/demo.yaml \
+  --config config/models.yaml \
+  --mtbench-dir data/mt-bench \
+  --mtbench-split train \
+  --output-root workspace/mtbench_suite
+```
+
+Mode aliases:
+
+* `original` -> `none` (no optimization, one-pass baseline)
+* `spo` -> SPO-like
+* `opro` -> OPRO-like
+* `ours` -> `current`
+
+Per-mode logs/results are separated into timestamped subfolders under `--output-root`, and each run still writes `run_config.json`, `best_prompt_scores.json`, `best_prompts_by_turn.json`, plus detailed rollout logs.
+
 ### Modes
 
 * `spo`: entropy shaping disabled; SPO-like lightweight candidate mutation.
