@@ -28,7 +28,7 @@ from __future__ import annotations
 import argparse
 import json
 import logging
-import os
+from logging.handlers import RotatingFileHandler
 from typing import Any, Dict, List, Optional, Tuple
 
 import yaml
@@ -37,6 +37,7 @@ from pathlib import Path
 
 # IMPORTANT: import the new optimizer you pasted earlier
 from components.prompt_optimizer import PromptOptimizer
+from utils.mtbench_data import load_or_download_mtbench, mtbench_rows_to_qa
 
 # ----------------------------
 # Utilities
@@ -69,7 +70,10 @@ class ChatClient:
         self.session = requests.Session()
 
     def chat_complete(self, messages: List[Dict[str, str]], **kwargs) -> str:
-        url = f"{self.endpoint}/v1/chat/completions"
+        if self.endpoint.endswith("/v1"):
+            url = f"{self.endpoint}/chat/completions"
+        else:
+            url = f"{self.endpoint}/v1/chat/completions"
         payload = {
             "model": self.model,
             "messages": messages,
@@ -93,8 +97,8 @@ class ChatClient:
 
 def build_client(models_cfg: Dict[str, Any], role_key: str, fallback_name: str) -> ChatClient:
     block = models_cfg.get(role_key) or {}
-    name = block.get("name", fallback_name)
-    endpoint = block.get("endpoint", "http://127.0.0.1:8002")
+    name = block.get("model") or block.get("name", fallback_name)
+    endpoint = block.get("base_url") or block.get("endpoint", "http://127.0.0.1:8002")
     params = block.get("params", {}) or {}
     return ChatClient(name=name, endpoint=endpoint, model=name, params=params)
 
@@ -183,14 +187,33 @@ def apply_mode_to_config(cfg_opt: Dict[str, Any], mode: str) -> None:
     cfg_opt.setdefault("judge", {"use_context": True})
     cfg_opt.setdefault("opro_history_scope", "run")
 
-    if mode == "spo":
+    if mode == "none":
+        cfg_opt["mode"] = "none"
+        cfg_opt["strategy_family"] = "none"
+        cfg_opt["max_rounds"] = 1
+        cfg_opt["sampling"]["candidates_per_turn"] = 1
+        cfg_opt["entropy"]["enabled"] = False
+    elif mode == "spo":
+        cfg_opt["mode"] = "spo"
+        cfg_opt["strategy_family"] = "spo"
         cfg_opt["entropy"]["enabled"] = False
     elif mode == "entropy":
+        cfg_opt["mode"] = "entropy"
+        cfg_opt["strategy_family"] = "spo"
         cfg_opt["entropy"]["enabled"] = True
         cfg_opt["entropy"].setdefault("metric", "entropy")
     elif mode == "opro":
+        cfg_opt["mode"] = "opro"
+        cfg_opt["strategy_family"] = "opro"
         cfg_opt["entropy"]["enabled"] = False
     elif mode == "opro_entropy":
+        cfg_opt["mode"] = "opro_entropy"
+        cfg_opt["strategy_family"] = "opro"
+        cfg_opt["entropy"]["enabled"] = True
+        cfg_opt["entropy"].setdefault("metric", "entropy")
+    elif mode == "current":
+        cfg_opt["mode"] = "current"
+        cfg_opt["strategy_family"] = "spo"
         cfg_opt["entropy"]["enabled"] = True
         cfg_opt["entropy"].setdefault("metric", "entropy")
     else:
@@ -201,7 +224,9 @@ def bind_hook_by_mode(opt: PromptOptimizer, mode: str) -> None:
     """
     Attach candidate generator hook to optimizer by mode.
     """
-    if mode in ("spo", "entropy"):
+    if mode == "none":
+        opt._gen_candidates_hook = lambda qid, turn, base, N, seeds=None: [base]
+    elif mode in ("spo", "entropy", "current"):
         opt._gen_candidates_hook = lambda qid, turn, base, N, seeds=None: spo_hook(qid, turn, base, N, seeds=None)
     elif mode in ("opro", "opro_entropy"):
         # run-scope seeds are handled inside PromptOptimizer; we pass through seeds argument
@@ -216,23 +241,51 @@ def bind_hook_by_mode(opt: PromptOptimizer, mode: str) -> None:
 def build_argparser() -> argparse.ArgumentParser:
     ap = argparse.ArgumentParser(description="Run multi-turn prompt optimizer (continuous dialogue).")
     ap.add_argument("--mode", required=True,
-                    choices=["spo", "opro", "entropy", "opro_entropy"],
+                    choices=["none", "spo", "opro", "entropy", "opro_entropy", "current"],
                     help="Optimization strategy.")
-    ap.add_argument("--template", required=True, help="Template YAML (contains qa + optimizer knobs).")
+    ap.add_argument("--template", default=None, help="Template YAML (contains qa + optimizer knobs).")
     ap.add_argument("--project", required=True, help="Project name; outputs to workspace/<project>.")
     ap.add_argument("--config", required=True, help="Models/endpoints YAML.")
     ap.add_argument("--log-level", default="INFO", choices=["DEBUG", "INFO", "WARNING", "ERROR"])
+    ap.add_argument("--log-file", default=None, help="Optional log file path.")
+    ap.add_argument("--output-dir", default=None, help="Optional explicit output directory.")
+    ap.add_argument("--dataset", choices=["template", "mt-bench"], default="template",
+                    help="Use qa from template or load MT-Bench dataset.")
+    ap.add_argument("--mtbench-dir", default="data/mt-bench",
+                    help="Local dir for MT-Bench cache/read.")
+    ap.add_argument("--mtbench-split", default="train")
+    ap.add_argument("--mtbench-limit", type=int, default=None)
+    ap.add_argument("--mtbench-categories", default="",
+                    help="Comma-separated categories, e.g. writing,reasoning")
     return ap
 
 def main() -> int:
     args = build_argparser().parse_args()
-    logging.basicConfig(level=getattr(logging, args.log_level))
+    handlers = [logging.StreamHandler()]
+    if args.log_file:
+        Path(args.log_file).parent.mkdir(parents=True, exist_ok=True)
+        handlers.append(RotatingFileHandler(args.log_file, maxBytes=5_000_000, backupCount=3, encoding="utf-8"))
+    logging.basicConfig(
+        level=getattr(logging, args.log_level),
+        format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
+        handlers=handlers,
+    )
 
     # Load template (optimizer config + qa)
-    tmpl = load_config_any(args.template)
-    qa: List[Dict[str, Any]] = tmpl.get("qa") or []
+    tmpl: Dict[str, Any] = {}
+    if args.template:
+        tmpl = load_config_any(args.template)
+    if not tmpl:
+        tmpl = {}
+
+    if args.dataset == "mt-bench":
+        rows = load_or_download_mtbench(args.mtbench_dir, split=args.mtbench_split)
+        categories = [x.strip() for x in args.mtbench_categories.split(",") if x.strip()]
+        qa = mtbench_rows_to_qa(rows, limit=args.mtbench_limit, categories=categories)
+    else:
+        qa = tmpl.get("qa") or []
     if not qa:
-        raise ValueError("template YAML must contain 'qa' list.")
+        raise ValueError("No QA items loaded. Provide --template with qa or --dataset mt-bench.")
 
     # Make a DEEP copy of template as optimizer config
     cfg_opt = json.loads(json.dumps(tmpl))
@@ -244,13 +297,30 @@ def main() -> int:
     mcfg = load_config_any(args.config)
     exec_llm = build_client(mcfg, "execute_model", "exec-llm")
     eval_llm = build_client(mcfg, "evaluate_model", "judge-llm")
+    opt_llm = build_client(mcfg, "optimize_model", "opt-llm")
 
     # Workspace
-    workdir = Path("workspace") / args.project
+    workdir = Path(args.output_dir) if args.output_dir else (Path("workspace") / args.project)
     ensure_dir(workdir)
+    with open(workdir / "run_config.json", "w", encoding="utf-8") as f:
+        json.dump({
+            "mode": args.mode,
+            "dataset": args.dataset,
+            "template": args.template,
+            "mtbench_dir": args.mtbench_dir,
+            "mtbench_split": args.mtbench_split,
+            "mtbench_limit": args.mtbench_limit,
+            "project": args.project,
+        }, f, ensure_ascii=False, indent=2)
 
     # Init optimizer
-    opt = PromptOptimizer(config=cfg_opt, exec_llm=exec_llm, eval_llm=eval_llm, workdir=str(workdir))
+    opt = PromptOptimizer(
+        config=cfg_opt,
+        exec_llm=exec_llm,
+        eval_llm=eval_llm,
+        opt_llm=opt_llm,
+        workdir=str(workdir),
+    )
 
     # Attach hook by mode
     bind_hook_by_mode(opt, args.mode)
@@ -259,6 +329,7 @@ def main() -> int:
     best_dir = opt.optimize(qa=qa)
     print(f"[OK] Best round artifacts -> {best_dir}")
     print(f"[OK] Best per-turn rewrites -> {workdir}/best_prompts_by_turn.json")
+    print(f"[OK] Run config -> {workdir}/run_config.json")
     return 0
 
 if __name__ == "__main__":
