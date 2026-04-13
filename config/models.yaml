@@ -1,23 +1,23 @@
 # Map logical roles to local vLLM endpoints. Adjust to your environment.
 # Each endpoint should expose an OpenAI-compatible API (e.g., /v1/chat/completions).
 optimize_model:
-  name: "opt-llm"            # Must match vLLM --served-model-name (or actual model id if single model)
-  endpoint: "http://localhost:8000"
+  model: "opt-llm"            # Prefer `model`; `name` is also accepted
+  base_url: "http://localhost:8000/v1"  # Prefer `base_url`; `endpoint` is also accepted
   params:
     temperature: 0.6
     max_tokens: 512
     top_p: 0.95
 
 evaluate_model:
-  name: "judge-llm"
-  endpoint: "http://localhost:8001"
+  model: "judge-llm"
+  base_url: "http://localhost:8001/v1"
   params:
     temperature: 0.2
     max_tokens: 512
 
 execute_model:
-  name: "exec-llm"
-  endpoint: "http://localhost:8002"
+  model: "exec-llm"
+  base_url: "http://localhost:8002/v1"
   params:
     temperature: 0.8
     max_tokens: 512
