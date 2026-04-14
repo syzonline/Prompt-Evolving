@@ -28,12 +28,15 @@ from __future__ import annotations
 import argparse
 import json
 import logging
+import time
 from logging.handlers import RotatingFileHandler
 from typing import Any, Dict, List, Optional, Tuple
 
 import yaml
 import requests
 from pathlib import Path
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 
 # IMPORTANT: import the new optimizer you pasted earlier
 from components.prompt_optimizer import PromptOptimizer
@@ -68,6 +71,39 @@ class ChatClient:
         self.model = model
         self.params = params or {}
         self.session = requests.Session()
+        self.max_attempts = int(self.params.pop("max_attempts", 3))
+        self.request_timeout = int(self.params.pop("timeout", 120))
+        self.success_count = 0
+        self.failure_count = 0
+        self.last_error = ""
+        self._configure_session_retries()
+
+    def _configure_session_retries(self) -> None:
+        retry = Retry(
+            total=max(0, self.max_attempts - 1),
+            connect=max(0, self.max_attempts - 1),
+            read=max(0, self.max_attempts - 1),
+            backoff_factor=0.8,
+            status_forcelist=[408, 429, 500, 502, 503, 504],
+            allowed_methods=frozenset(["POST"]),
+            raise_on_status=False,
+        )
+        adapter = HTTPAdapter(max_retries=retry)
+        self.session.mount("http://", adapter)
+        self.session.mount("https://", adapter)
+
+    def get_health(self) -> Dict[str, Any]:
+        total = self.success_count + self.failure_count
+        fail_rate = (self.failure_count / total) if total else 0.0
+        return {
+            "name": self.name,
+            "model": self.model,
+            "endpoint": self.endpoint,
+            "success_count": self.success_count,
+            "failure_count": self.failure_count,
+            "failure_rate": round(fail_rate, 4),
+            "last_error": self.last_error,
+        }
 
     def chat_complete(self, messages: List[Dict[str, str]], **kwargs) -> str:
         if self.endpoint.endswith("/v1"):
@@ -82,18 +118,26 @@ class ChatClient:
         payload.update(self.params)
         # allow overrides per call
         payload.update(kwargs or {})
-        try:
-            resp = self.session.post(url, json=payload, timeout=120)
-            resp.raise_for_status()
-            data = resp.json()
-            # OpenAI-compatible shape
-            content = data["choices"][0]["message"]["content"]
-            if isinstance(content, str):
-                return content
-            return str(content)
-        except Exception as e:
-            logging.exception("[ChatClient:%s] request failed: %s", self.name, e)
-            return ""
+        for attempt in range(1, self.max_attempts + 1):
+            try:
+                resp = self.session.post(url, json=payload, timeout=self.request_timeout)
+                resp.raise_for_status()
+                data = resp.json()
+                # OpenAI-compatible shape
+                content = data["choices"][0]["message"]["content"]
+                self.success_count += 1
+                if isinstance(content, str):
+                    return content
+                return str(content)
+            except Exception as e:
+                self.last_error = str(e)
+                if attempt >= self.max_attempts:
+                    self.failure_count += 1
+                    logging.exception("[ChatClient:%s] request failed after %d attempts: %s", self.name, attempt, e)
+                    return ""
+                logging.warning("[ChatClient:%s] request failed (attempt %d/%d): %s", self.name, attempt, self.max_attempts, e)
+                time.sleep(min(2.5, 0.6 * (2 ** (attempt - 1))))
+        return ""
 
 def build_client(models_cfg: Dict[str, Any], role_key: str, fallback_name: str) -> ChatClient:
     block = models_cfg.get(role_key) or {}
@@ -327,9 +371,23 @@ def main() -> int:
 
     # Optimize
     best_dir = opt.optimize(qa=qa)
+    health = {
+        "exec_llm": exec_llm.get_health(),
+        "eval_llm": eval_llm.get_health(),
+        "opt_llm": opt_llm.get_health(),
+    }
+    with open(workdir / "llm_health.json", "w", encoding="utf-8") as f:
+        json.dump(health, f, ensure_ascii=False, indent=2)
+    for role, stat in health.items():
+        if stat["failure_rate"] > 0.0:
+            logging.warning("[%s] network instability detected: failure_rate=%.2f (%d/%d), last_error=%s",
+                            role, stat["failure_rate"], stat["failure_count"],
+                            stat["success_count"] + stat["failure_count"], stat["last_error"])
+
     print(f"[OK] Best round artifacts -> {best_dir}")
     print(f"[OK] Best per-turn rewrites -> {workdir}/best_prompts_by_turn.json")
     print(f"[OK] Run config -> {workdir}/run_config.json")
+    print(f"[OK] LLM request health -> {workdir}/llm_health.json")
     return 0
 
 if __name__ == "__main__":
