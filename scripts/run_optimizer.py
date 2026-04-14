@@ -28,6 +28,7 @@ from __future__ import annotations
 import argparse
 import json
 import logging
+import random
 import time
 from logging.handlers import RotatingFileHandler
 from typing import Any, Dict, List, Optional, Tuple
@@ -69,28 +70,59 @@ class ChatClient:
         self.name = name
         self.endpoint = endpoint.rstrip("/")
         self.model = model
-        self.params = params or {}
+        self.params = dict(params or {})
         self.session = requests.Session()
         self.max_attempts = int(self.params.pop("max_attempts", 3))
         self.request_timeout = int(self.params.pop("timeout", 120))
+        self.backoff_base = float(self.params.pop("backoff_base", 0.8))
+        self.backoff_cap = float(self.params.pop("backoff_cap", 8.0))
+        self.max_jitter = float(self.params.pop("max_jitter", 0.4))
         self.success_count = 0
         self.failure_count = 0
         self.last_error = ""
+        self.retryable_statuses = {408, 425, 429, 500, 502, 503, 504}
         self._configure_session_retries()
 
     def _configure_session_retries(self) -> None:
         retry = Retry(
-            total=max(0, self.max_attempts - 1),
-            connect=max(0, self.max_attempts - 1),
-            read=max(0, self.max_attempts - 1),
-            backoff_factor=0.8,
-            status_forcelist=[408, 429, 500, 502, 503, 504],
-            allowed_methods=frozenset(["POST"]),
+            total=0,
+            connect=0,
+            read=0,
+            backoff_factor=0,
+            status_forcelist=[],
+            allowed_methods=None,
             raise_on_status=False,
         )
         adapter = HTTPAdapter(max_retries=retry)
         self.session.mount("http://", adapter)
         self.session.mount("https://", adapter)
+
+    def _compute_delay(self, attempt: int) -> float:
+        exp = min(self.backoff_cap, self.backoff_base * (2 ** max(0, attempt - 1)))
+        jitter = random.uniform(0.0, self.max_jitter)
+        return exp + jitter
+
+    def _extract_retry_after(self, resp: Optional[requests.Response]) -> Optional[float]:
+        if resp is None:
+            return None
+        v = resp.headers.get("Retry-After")
+        if not v:
+            return None
+        try:
+            return max(0.0, float(v))
+        except Exception:
+            return None
+
+    def _is_retryable(self, e: Exception) -> Tuple[bool, Optional[int], Optional[requests.Response]]:
+        if isinstance(e, requests.exceptions.Timeout):
+            return True, None, None
+        if isinstance(e, requests.exceptions.ConnectionError):
+            return True, None, None
+        if isinstance(e, requests.exceptions.HTTPError):
+            resp = e.response
+            code = resp.status_code if resp is not None else None
+            return bool(code in self.retryable_statuses), code, resp
+        return False, None, None
 
     def get_health(self) -> Dict[str, Any]:
         total = self.success_count + self.failure_count
@@ -131,12 +163,29 @@ class ChatClient:
                 return str(content)
             except Exception as e:
                 self.last_error = str(e)
+                retryable, status_code, err_resp = self._is_retryable(e)
                 if attempt >= self.max_attempts:
                     self.failure_count += 1
-                    logging.exception("[ChatClient:%s] request failed after %d attempts: %s", self.name, attempt, e)
+                    logging.exception(
+                        "[ChatClient:%s] request failed after %d attempts (retryable=%s status=%s): %s",
+                        self.name, attempt, retryable, status_code, e
+                    )
                     return ""
-                logging.warning("[ChatClient:%s] request failed (attempt %d/%d): %s", self.name, attempt, self.max_attempts, e)
-                time.sleep(min(2.5, 0.6 * (2 ** (attempt - 1))))
+                if not retryable:
+                    self.failure_count += 1
+                    logging.exception(
+                        "[ChatClient:%s] non-retryable request failure (status=%s): %s",
+                        self.name, status_code, e
+                    )
+                    return ""
+                delay = self._extract_retry_after(err_resp)
+                if delay is None:
+                    delay = self._compute_delay(attempt)
+                logging.warning(
+                    "[ChatClient:%s] request failed (attempt %d/%d, status=%s), retry in %.2fs: %s",
+                    self.name, attempt, self.max_attempts, status_code, delay, e
+                )
+                time.sleep(delay)
         return ""
 
 def build_client(models_cfg: Dict[str, Any], role_key: str, fallback_name: str) -> ChatClient:
