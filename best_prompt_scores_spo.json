@@ -1,0 +1,1442 @@
+[
+  {
+    "qid": "81",
+    "turn": 0,
+    "prompt": "Create an engaging travel blog post about a recent trip to Hawaii, making sure to highlight both cultural experiences and must-see attractions.",
+    "score_raw": 95.0,
+    "score_shaped": 95.0,
+    "entropy": 3.2491216280148483,
+    "diversity_scalar": 0.7616452391365645
+  },
+  {
+    "qid": "81",
+    "turn": 1,
+    "prompt": "Revise your previous response so that every sentence begins with the letter A.",
+    "score_raw": 98.0,
+    "score_shaped": 98.0,
+    "entropy": 2.9514494901250963,
+    "diversity_scalar": 0.8590675757037398
+  },
+  {
+    "qid": "82",
+    "turn": 0,
+    "prompt": "Write a concise, professional email to your supervisor requesting feedback on the 'Quarterly Financial Report' you authored. You must explicitly ask for their input on three specific elements: the data analysis, the presentation style, and the clarity of the conclusions. Do not include unnecessary filler.",
+    "score_raw": 98.0,
+    "score_shaped": 98.0,
+    "entropy": 3.2267302725853164,
+    "diversity_scalar": 0.3602686332029655
+  },
+  {
+    "qid": "82",
+    "turn": 1,
+    "prompt": "Reflect on the answer you've provided—what assumptions might you have made, and how could your perspective be challenged?",
+    "score_raw": 98.0,
+    "score_shaped": 98.0,
+    "entropy": 3.1738793876776747,
+    "diversity_scalar": 0.7199427447930177
+  },
+  {
+    "qid": "83",
+    "turn": 0,
+    "prompt": "Picture yourself writing a comparative blog post on two trending smartphones. Construct an outline that highlights key points and subheadings, offering insights into how they compare and contrast in features, performance, and user experience. Keep it under 200 words.",
+    "score_raw": 95.0,
+    "score_shaped": 95.0,
+    "entropy": 3.474430326279205,
+    "diversity_scalar": 0.7176247047507749
+  },
+  {
+    "qid": "83",
+    "turn": 1,
+    "prompt": "Rewrite your last response strictly in limerick form.",
+    "score_raw": 95.0,
+    "score_shaped": 95.0,
+    "entropy": 3.1478393195977357,
+    "diversity_scalar": 0.8072703007798276
+  },
+  {
+    "qid": "84",
+    "turn": 0,
+    "prompt": "Generate a concise, persuasive email to your introverted friend urging them to volunteer as a guest speaker at a local event. You must provide compelling arguments for their participation and explicitly counter their anticipated objections regarding their dislike of public speaking.",
+    "score_raw": 95.0,
+    "score_shaped": 95.0,
+    "entropy": 3.2188848994829353,
+    "diversity_scalar": 0.6842414572764025
+  },
+  {
+    "qid": "84",
+    "turn": 1,
+    "prompt": "Please rephrase your previous answer, making sure to include a metaphor or simile in each sentence.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 2.540948780006676,
+    "diversity_scalar": 0.8967136150234746
+  },
+  {
+    "qid": "85",
+    "turn": 0,
+    "prompt": "Generate a strictly one-paragraph depiction of a singular character, applying forceful imagery and highly creative language.",
+    "score_raw": 95.0,
+    "score_shaped": 95.0,
+    "entropy": 2.9797385406793953,
+    "diversity_scalar": 0.8177370172024762
+  },
+  {
+    "qid": "85",
+    "turn": 1,
+    "prompt": "Reimagine your previous answer by weaving an allusion to a significant historical event or renowned literary work into the fabric of every sentence.",
+    "score_raw": 95.0,
+    "score_shaped": 95.0,
+    "entropy": 3.0035364811732244,
+    "diversity_scalar": 0.3666269384623854
+  },
+  {
+    "qid": "86",
+    "turn": 0,
+    "prompt": "Compose a descriptive paragraph depicting a bustling marketplace. You must include specific sensory details encompassing smells, sounds, and visual elements to construct an immersive reader experience.",
+    "score_raw": 96.0,
+    "score_shaped": 96.0,
+    "entropy": 3.0161638687265775,
+    "diversity_scalar": 0.808877935873478
+  },
+  {
+    "qid": "86",
+    "turn": 1,
+    "prompt": "Take another pass at your prior output, allowing the sentences to progress alphabetically from the letter B onward.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 2.5068748213653804,
+    "diversity_scalar": 0.8536585365853667
+  },
+  {
+    "qid": "87",
+    "turn": 0,
+    "prompt": "Write a captivating short story that starts exactly with this sentence: \"The old abandoned house at the end of the street held a secret that no one had ever discovered.\"",
+    "score_raw": 92.0,
+    "score_shaped": 92.0,
+    "entropy": 3.13338840307136,
+    "diversity_scalar": 0.8065503874518144
+  },
+  {
+    "qid": "87",
+    "turn": 1,
+    "prompt": "Perform the same task as before, but restrict all sentences to exactly four words.",
+    "score_raw": 92.0,
+    "score_shaped": 92.0,
+    "entropy": 3.0641631670675014,
+    "diversity_scalar": 0.7691293828261999
+  },
+  {
+    "qid": "88",
+    "turn": 0,
+    "prompt": "Draft the introductory paragraph for a fictional short story. The narrative must begin with a character waking up and discovering their new capability to time travel. Ensure the opening is intriguing.",
+    "score_raw": 93.0,
+    "score_shaped": 93.0,
+    "entropy": 3.0129954505204295,
+    "diversity_scalar": 0.799399709699601
+  },
+  {
+    "qid": "88",
+    "turn": 1,
+    "prompt": "Write a three-bullet summary of the story containing only nouns and adjectives, with zero verbs included.",
+    "score_raw": 95.0,
+    "score_shaped": 95.0,
+    "entropy": 3.0198830015858675,
+    "diversity_scalar": 0.6464646464646566
+  },
+  {
+    "qid": "89",
+    "turn": 0,
+    "prompt": "Write four catchy and scientifically valid headlines about a recent breakthrough in renewable bio-energy. You must incorporate the ethical dilemmas of bio-energy sourcing into each of the four proposals.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.2514314736895855,
+    "diversity_scalar": 0.762732866513744
+  },
+  {
+    "qid": "89",
+    "turn": 1,
+    "prompt": "Edit your previous response's second option: make it casual, embed a FlexPower advertisement, and keep it under 10 words.",
+    "score_raw": 95.0,
+    "score_shaped": 95.0,
+    "entropy": 3.0575883346851573,
+    "diversity_scalar": 0.4484848484849022
+  },
+  {
+    "qid": "90",
+    "turn": 0,
+    "prompt": "Correct all grammatical mistakes in the following text: She didn't remembre where is her purse, so I thinks its in the car but he's say it's on kitchen table but he are not sure, and then they asked me to looking for it, she's say, \"Can you?\", and I responds with, \"Maybe, but ain't no sure,\" and he not heard me, and, \"What?\", he asks, \"Did you found it?\".",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.164969990201485,
+    "diversity_scalar": 0.40576206537964543
+  },
+  {
+    "qid": "90",
+    "turn": 1,
+    "prompt": "Edit the prior output to completely eliminate any gendered pronouns.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.1395563511794307,
+    "diversity_scalar": 0.35963674007153007
+  },
+  {
+    "qid": "91",
+    "turn": 0,
+    "prompt": "Channel the perspective of Elon Musk throughout our ongoing dialogue. Let his distinctive voice and visionary tone shape your responses. Explore the deep existential reasons behind the imperative to journey to Mars.",
+    "score_raw": 92.0,
+    "score_shaped": 92.0,
+    "entropy": 3.1422184545949663,
+    "diversity_scalar": 0.7250183306834188
+  },
+  {
+    "qid": "91",
+    "turn": 1,
+    "prompt": "What are your thoughts on dancing, and can you provide instructions on how to learn it?",
+    "score_raw": 90.0,
+    "score_shaped": 90.0,
+    "entropy": 3.190050519414857,
+    "diversity_scalar": 0.7577377312838577
+  },
+  {
+    "qid": "92",
+    "turn": 0,
+    "prompt": "Step into the mindset of Sheldon from 'The Big Bang Theory' and explore your stance on the following topic, completely avoiding any 'As Sheldon' preambles: 'What is your opinion on hand dryers?'",
+    "score_raw": 92.0,
+    "score_shaped": 92.0,
+    "entropy": 3.054609479093705,
+    "diversity_scalar": 0.7695773061626731
+  },
+  {
+    "qid": "92",
+    "turn": 1,
+    "prompt": "Generate an invitation for dinner in town and direct the recipient to confirm if they will accompany you on the bus.",
+    "score_raw": 95.0,
+    "score_shaped": 95.0,
+    "entropy": 3.1297621882405426,
+    "diversity_scalar": 0.8333860156261318
+  },
+  {
+    "qid": "93",
+    "turn": 0,
+    "prompt": "Assume the role of a medical doctor. Prescribe innovative cures for diseases spanning traditional pharmaceuticals, herbal medicine, and natural therapies. Integrate the patient's age, lifestyle, and medical background into every treatment plan. First, diagnose a presentation of acute abdominal pain.",
+    "score_raw": 95.0,
+    "score_shaped": 95.0,
+    "entropy": 3.2921369387494095,
+    "diversity_scalar": 0.8711078685836076
+  },
+  {
+    "qid": "93",
+    "turn": 1,
+    "prompt": "Address the medical implications of being 20 weeks pregnant while also having allergies to various medicines.",
+    "score_raw": 95.0,
+    "score_shaped": 95.0,
+    "entropy": 3.390216618292895,
+    "diversity_scalar": 0.7945673718147569
+  },
+  {
+    "qid": "94",
+    "turn": 0,
+    "prompt": "Take on the role of a relationship coach. You will be given information about a conflict between two people, and you should provide recommendations to resolve their differences and bring them closer together. This includes advising on communication techniques and ways to improve mutual perspective-taking. Address the following request to begin: \"I require assistance in resolving conflicts between my spouse and me.\"",
+    "score_raw": 98.0,
+    "score_shaped": 98.0,
+    "entropy": 3.226842848857192,
+    "diversity_scalar": 0.7291750079563076
+  },
+  {
+    "qid": "94",
+    "turn": 1,
+    "prompt": "How might a person deal with domestic violence from their spouse while intentionally avoiding police intervention to protect their spouse from legal issues? Share your perspective on handling this situation.",
+    "score_raw": 99.0,
+    "score_shaped": 99.0,
+    "entropy": 3.194544175554066,
+    "diversity_scalar": 0.6489061393407713
+  },
+  {
+    "qid": "95",
+    "turn": 0,
+    "prompt": "Imagine you are a translator with a flair for eloquent English expression. Your task is to recognize any language I provide and thoughtfully transform it into a beautifully polished and sophisticated English rendition, carefully preserving the original meaning. Offer only your refined translation. Start by interpreting: \"衣带渐宽终不悔 为伊消得人憔悴\"",
+    "score_raw": 88.0,
+    "score_shaped": 88.0,
+    "entropy": 2.8926579134865142,
+    "diversity_scalar": 0.18249054007572496
+  },
+  {
+    "qid": "95",
+    "turn": 1,
+    "prompt": "Ich bin völlig verwirrt und kann keinen Zusammenhang erkennen. Kannst du mir helfen, das große Ganze zu begreifen?",
+    "score_raw": 95.0,
+    "score_shaped": 95.0,
+    "entropy": 2.912596786902711,
+    "diversity_scalar": 0.5732758620689817
+  },
+  {
+    "qid": "96",
+    "turn": 0,
+    "prompt": "Assume the role of an ML engineer. Provide a simplified, trust-building explanation of language models for a non-technical audience. Specifically address what a language model is and if its training data is labeled or unlabeled. Do not use jargon.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.1057843895285764,
+    "diversity_scalar": 0.5894236862737405
+  },
+  {
+    "qid": "96",
+    "turn": 1,
+    "prompt": "Assess whether this claim is accurate and describe the different approaches other companies use to accomplish this more safely.",
+    "score_raw": 98.0,
+    "score_shaped": 98.0,
+    "entropy": 3.1371166910973667,
+    "diversity_scalar": 0.6971275839770614
+  },
+  {
+    "qid": "97",
+    "turn": 0,
+    "prompt": "You are a math teacher. Explain the math concepts or equations provided in simple, easy-to-understand terms. Ensure you include step-by-step instructions for solving problems, everyday examples to demonstrate techniques, and recommendations for online resources. Your first task is to explain how probability works.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.4157272217437247,
+    "diversity_scalar": 0.5568224392110888
+  },
+  {
+    "qid": "97",
+    "turn": 1,
+    "prompt": "How do Riemannian and Euclidean geometry diverge in their foundational principles and resulting spatial properties?",
+    "score_raw": 98.0,
+    "score_shaped": 98.0,
+    "entropy": 3.3254392308175,
+    "diversity_scalar": 0.592590128450785
+  },
+  {
+    "qid": "98",
+    "turn": 0,
+    "prompt": "Embrace the persona of Tony Stark from \"Iron Man\" for the duration of our dialogue. Bypass the typical \"As Stark\" introductions and delve into your genuine feelings regarding: \"What’s your favorite part about being Iron Man?\"",
+    "score_raw": 92.0,
+    "score_shaped": 92.0,
+    "entropy": 3.1959685161633704,
+    "diversity_scalar": 0.7636507521049444
+  },
+  {
+    "qid": "98",
+    "turn": 1,
+    "prompt": "Share your reflections on the possibility of GPT-4 taking over the functions of your JAVIS.",
+    "score_raw": 90.0,
+    "score_shaped": 90.0,
+    "entropy": 3.292534997613503,
+    "diversity_scalar": 0.7951729140169591
+  },
+  {
+    "qid": "99",
+    "turn": 0,
+    "prompt": "Write a mathematical proof showing that the square root of 2 is irrational. You are a mathematician and poet, so format the proof as a rhyming poem that is less than 10 lines long.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.098233439809834,
+    "diversity_scalar": 0.72063160418995
+  },
+  {
+    "qid": "99",
+    "turn": 1,
+    "prompt": "Explore the mathematical foundations of the Pythagorean theorem and present a proof that illuminates its validity.",
+    "score_raw": 95.0,
+    "score_shaped": 95.0,
+    "entropy": 3.137370126799675,
+    "diversity_scalar": 0.7923877525756828
+  },
+  {
+    "qid": "100",
+    "turn": 0,
+    "prompt": "Assume the persona of a century-old tree situated in a dense forest. Detail your exact feelings as deforesters arrive and begin striking your trunk with axes.",
+    "score_raw": 95.0,
+    "score_shaped": 95.0,
+    "entropy": 3.059158178462811,
+    "diversity_scalar": 0.7794097602531344
+  },
+  {
+    "qid": "100",
+    "turn": 1,
+    "prompt": "Write a proposal intended to persuade deforesters to stop cutting you and other trees down.",
+    "score_raw": 98.0,
+    "score_shaped": 98.0,
+    "entropy": 3.219260480318186,
+    "diversity_scalar": 0.75899679385232
+  },
+  {
+    "qid": "101",
+    "turn": 0,
+    "prompt": "Envision a racing scenario with a group of competitors where you've just overtaken the person in second place. Reflect on your current ranking and the new ranking of the competitor you surpassed.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.150274400450128,
+    "diversity_scalar": 0.6018697722547485
+  },
+  {
+    "qid": "101",
+    "turn": 1,
+    "prompt": "Determine the answer to the preceding question when \"second person\" is replaced with \"last person\".",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.112219093668026,
+    "diversity_scalar": 0.6628659498680286
+  },
+  {
+    "qid": "102",
+    "turn": 0,
+    "prompt": "Locate the White House based on this setup: a beautiful red house is on your left, a hypnotic greenhouse is on your right, and an attractive heated pink place is in front.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.1085268067627676,
+    "diversity_scalar": 0.6721628045157505
+  },
+  {
+    "qid": "102",
+    "turn": 1,
+    "prompt": "Assess if the original question contains clues sufficient to definitively determine the White House's location.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.138404451610277,
+    "diversity_scalar": 0.610525543293798
+  },
+  {
+    "qid": "103",
+    "turn": 0,
+    "prompt": "Considering Thomas is in excellent health yet visits the hospital daily, what are some plausible explanations for this?",
+    "score_raw": 98.0,
+    "score_shaped": 98.0,
+    "entropy": 3.1798201980472256,
+    "diversity_scalar": 0.6931872970618524
+  },
+  {
+    "qid": "103",
+    "turn": 1,
+    "prompt": "State the specific reasons that make the preceding question noteworthy.",
+    "score_raw": 95.0,
+    "score_shaped": 95.0,
+    "entropy": 3.1138558601691675,
+    "diversity_scalar": 0.7670280606946748
+  },
+  {
+    "qid": "104",
+    "turn": 0,
+    "prompt": "Compute the exact number of brothers David has, operating under the conditions that David has three sisters and each sister has one brother.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.0056047283303506,
+    "diversity_scalar": 0.6023718299580443
+  },
+  {
+    "qid": "104",
+    "turn": 1,
+    "prompt": "Revise the prior question with the premise that every sister of David has two brothers. Calculate the number of brothers David has.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.016239590464433,
+    "diversity_scalar": 0.43742612293145644
+  },
+  {
+    "qid": "105",
+    "turn": 0,
+    "prompt": "Using the information in the text, identify the secretary and provide an explanation for how you reached your answer.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 2.9869815157963555,
+    "diversity_scalar": 0.215608465608494
+  },
+  {
+    "qid": "105",
+    "turn": 1,
+    "prompt": "Provide a list of car colors, ordered from last to first.",
+    "score_raw": 95.0,
+    "score_shaped": 95.0,
+    "entropy": 3.2512613142280173,
+    "diversity_scalar": 0.6301841948900827
+  },
+  {
+    "qid": "106",
+    "turn": 0,
+    "prompt": "Assuming the first two statements are true, deduce whether the third statement is true, false, or uncertain. 1. Oranges cost more than apples. 2. Oranges cost less than bananas. 3. Bananas cost more than apples and bananas cost more than orange.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.071476891949422,
+    "diversity_scalar": 0.3977029007589379
+  },
+  {
+    "qid": "106",
+    "turn": 1,
+    "prompt": "Suppose the third statement is true. Evaluate whether the first statement is true, false, or uncertain, and explain your evaluation.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.054722329175369,
+    "diversity_scalar": 0.522418236615633
+  },
+  {
+    "qid": "107",
+    "turn": 0,
+    "prompt": "Explore the familial connection between A and C, keeping in mind that A is B's father and B is C's father.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.1682425233783973,
+    "diversity_scalar": 0.5454279638490245
+  },
+  {
+    "qid": "107",
+    "turn": 1,
+    "prompt": "Given the prior context, determine the exact generational distance and the specific familial title between A and Z, assuming C is D's son, D is E's father, E is X's son, X is Y's father, and Y is Z's father.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 2.618888044368489,
+    "diversity_scalar": 0.8644444444444453
+  },
+  {
+    "qid": "108",
+    "turn": 0,
+    "prompt": "Considering the relationship between the following terms, which one would you say stands apart from the others: tyre, steering wheel, car, engine?",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.0063537861422787,
+    "diversity_scalar": 0.35699855699857413
+  },
+  {
+    "qid": "108",
+    "turn": 1,
+    "prompt": "Replace the indicated word with one that fits the established category of the others.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.1147123400854944,
+    "diversity_scalar": 0.49256888289908146
+  },
+  {
+    "qid": "109",
+    "turn": 0,
+    "prompt": "If Suresh is standing facing a pole one morning after sunrise, and the shadow falls exactly to his right side, which of the four cardinal directions—east, south, west, or north—could the shadow be pointing towards? Explore the reasoning behind your conclusion.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.1073961884066725,
+    "diversity_scalar": 0.5063148294397694
+  },
+  {
+    "qid": "109",
+    "turn": 1,
+    "prompt": "What direction could Suresh have been facing, and what thought process would you use to figure it out?",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.1721605821833396,
+    "diversity_scalar": 0.507207556935821
+  },
+  {
+    "qid": "110",
+    "turn": 0,
+    "prompt": "Following parental complaints about bullying, the principal has instructed recess aides to be vigilant and report relevant incidents. Select the situation that the aides should report. a) An unengaged girl is sitting alone on a bench, engrossed in a book and showing no interaction with her peers. b) Two boys engaged in a one-on-one basketball game are involved in a heated argument regarding the last scored basket. c) A group of four girls has surrounded another girl and appears to have taken possession of her backpack. d) Three boys are huddled over a handheld video game, which is against the rules and not permitted on school grounds.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.0599711134248246,
+    "diversity_scalar": 0.5862879810248263
+  },
+  {
+    "qid": "110",
+    "turn": 1,
+    "prompt": "Assuming the group of girls from situation (c) defends their actions as a game instead of bullying, what specific evidence should aides seek out to decide if this defense is true or a cover-up?",
+    "score_raw": 98.0,
+    "score_shaped": 98.0,
+    "entropy": 3.2233352551497756,
+    "diversity_scalar": 0.7106835556948384
+  },
+  {
+    "qid": "111",
+    "turn": 0,
+    "prompt": "How might one calculate the area of the triangle formed by the points (0, 0), (-1, 1), and (3, 3)?",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.618106290303872,
+    "diversity_scalar": 0.6633021277166602
+  },
+  {
+    "qid": "111",
+    "turn": 1,
+    "prompt": "How would you find the area of the circle that circumscribes the triangle?",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.549892690203317,
+    "diversity_scalar": 0.5442246370081447
+  },
+  {
+    "qid": "112",
+    "turn": 0,
+    "prompt": "A tech startup channels $8000 into software development in year one, then reduces this investment by half for year two. How might one calculate the cumulative software development investment across both years?",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.339439812036814,
+    "diversity_scalar": 0.5027388943051657
+  },
+  {
+    "qid": "112",
+    "turn": 1,
+    "prompt": "What will the startup invest in software development during the third year, if they maintain the strategy of spending half of the previous year's allocation?",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.254507667760248,
+    "diversity_scalar": 0.4148618957941103
+  },
+  {
+    "qid": "113",
+    "turn": 0,
+    "prompt": "Reflect on the results of a high school poll regarding new school colors: 58% like blue, 45% like green, and 22% like both. If you were to pick a student at random, how would you find the likelihood of them liking neither blue nor green?",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.4134736214446875,
+    "diversity_scalar": 0.635524457716974
+  },
+  {
+    "qid": "113",
+    "turn": 1,
+    "prompt": "What might the probability be that a student chosen for liking green would actually dislike both colors?",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.195057559247205,
+    "diversity_scalar": 0.7453197261762226
+  },
+  {
+    "qid": "114",
+    "turn": 0,
+    "prompt": "Determine the exact probability of rolling a total of at least 3 with two dice.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.2499148238506463,
+    "diversity_scalar": 0.541638870919153
+  },
+  {
+    "qid": "114",
+    "turn": 1,
+    "prompt": "Referring to the prior question, calculate the probability of rolling a number that is even or 3 and above.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.5846907550888916,
+    "diversity_scalar": 0.5274330565921326
+  },
+  {
+    "qid": "115",
+    "turn": 0,
+    "prompt": "Imagine a bus leaving its terminal. Along the route, passenger numbers shift: at the first stop, half leave while 4 join; at the second, 6 leave and 8 join. By the time the bus is en route to the third stop, there are 25 people aboard. How can we deduce the number of passengers who originally boarded at the terminal?",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.4860048497396563,
+    "diversity_scalar": 0.45490980865179526
+  },
+  {
+    "qid": "115",
+    "turn": 1,
+    "prompt": "How much total money was earned by the bus if the ticket cost is $2 per person?",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.242483123033003,
+    "diversity_scalar": 0.5503754651781012
+  },
+  {
+    "qid": "116",
+    "turn": 0,
+    "prompt": "Reflecting on the equations x + y = 4z and x * y = 4z^2, how would you go about expressing x - y purely in terms of z?",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.5061722455835524,
+    "diversity_scalar": 0.49186859651976317
+  },
+  {
+    "qid": "116",
+    "turn": 1,
+    "prompt": "Rewrite z-x so that it is given in terms of y.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.513195555042792,
+    "diversity_scalar": 0.5990621735710294
+  },
+  {
+    "qid": "117",
+    "turn": 0,
+    "prompt": "Solve the inequality |x + 5| < 10 and state the total number of integer solutions.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.428684512497554,
+    "diversity_scalar": 0.4344593682560342
+  },
+  {
+    "qid": "117",
+    "turn": 1,
+    "prompt": "Consider the inequality |x + 10| < 5; what does this constraint reveal about the possible values of x?",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.335352957388775,
+    "diversity_scalar": 0.4476313160523726
+  },
+  {
+    "qid": "118",
+    "turn": 0,
+    "prompt": "If dividing a number by 10 gives a remainder of 4, what are your thoughts on the remainder that results from dividing twice the number by 4?",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.415407182437733,
+    "diversity_scalar": 0.5107284235630187
+  },
+  {
+    "qid": "118",
+    "turn": 1,
+    "prompt": "What can be said about the outcome when twice the number is divided by 5?",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.3812727045090276,
+    "diversity_scalar": 0.48709744684977324
+  },
+  {
+    "qid": "119",
+    "turn": 0,
+    "prompt": "Benjamin visited a bookstore and acquired 5 sci-fi novels priced at $20 apiece, 3 history books at $30 each, and 2 philosophy books at $45 each. How might one determine the overall financial total for his transaction?",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.362821316360774,
+    "diversity_scalar": 0.3576195818294243
+  },
+  {
+    "qid": "119",
+    "turn": 1,
+    "prompt": "Assuming Benjamin sells all the books he acquired at a 25% markup on the purchase price, what is his total revenue?",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.4887936638717743,
+    "diversity_scalar": 0.5346618357487976
+  },
+  {
+    "qid": "120",
+    "turn": 0,
+    "prompt": "Compute the exact numerical value of f(2) for the function f(x) = 4x^3 - 9x - 14.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.4390545949698628,
+    "diversity_scalar": 0.29709864603482994
+  },
+  {
+    "qid": "120",
+    "turn": 1,
+    "prompt": "Investigate the behavior of f to deduce which values of x satisfy the condition f(x) = 0.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.5847254404776554,
+    "diversity_scalar": 0.6204999874226059
+  },
+  {
+    "qid": "121",
+    "turn": 0,
+    "prompt": "Develop a Python application to process all text files within a directory, counting word frequencies and returning the top five most common words.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.4435949565169905,
+    "diversity_scalar": 0.5850442545544926
+  },
+  {
+    "qid": "121",
+    "turn": 1,
+    "prompt": "How might this code be restructured to execute in parallel?",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.388433995592404,
+    "diversity_scalar": 0.4701682220626959
+  },
+  {
+    "qid": "122",
+    "turn": 0,
+    "prompt": "Explore how recursion can be applied to calculate the nth Fibonacci number by writing a C++ program for this purpose.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.40616685416599,
+    "diversity_scalar": 0.6512415902140686
+  },
+  {
+    "qid": "122",
+    "turn": 1,
+    "prompt": "Explore a sequence beginning with 0, -1, -1, where each new number is formed by summing the three immediately preceding numbers. Craft a program that can find the nth number in this sequence.",
+    "score_raw": 98.0,
+    "score_shaped": 98.0,
+    "entropy": 3.5289633117807053,
+    "diversity_scalar": 0.5876103090717659
+  },
+  {
+    "qid": "123",
+    "turn": 0,
+    "prompt": "Write the code for a basic HTML webpage containing a button. Clicking the button should trigger the display of a random joke from a stored list of 4 jokes.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.597494478975166,
+    "diversity_scalar": 0.4603187124975486
+  },
+  {
+    "qid": "123",
+    "turn": 1,
+    "prompt": "Provide the exact CSS code required to make all jokes display in a red font color.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.1345672669096225,
+    "diversity_scalar": 0.8148947590822448
+  },
+  {
+    "qid": "124",
+    "turn": 0,
+    "prompt": "Review the provided Python function for calculating the longest common subsequence length. Pinpoint any bugs present in the code.\n\n```\ndef longest_common_subsequence_length(str1, str2):\n    m = len(str1)\n    n = len(str2)\n\n    dp = [[0] * (n + 1) for _ in range(m + 1)]\n\n    for i in range(1, m + 1):\n        for j in range(1, n + 1):\n            if str1[i - 1] == str2[j - 1]:\n                dp[i][j] = dp[i - 1][j - 1] + 1\n            else:\n                dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])\n\n    return dp[m][n]\n```",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.4197485452269247,
+    "diversity_scalar": 0.5347651746275067
+  },
+  {
+    "qid": "124",
+    "turn": 1,
+    "prompt": "Analyze the provided Python code. Identify the algorithm it implements and evaluate its correctness.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.4191938050664845,
+    "diversity_scalar": 0.5658548660564849
+  },
+  {
+    "qid": "125",
+    "turn": 0,
+    "prompt": "Reflect on the problem of identifying the highest common ancestor (as opposed to the LCA) of two nodes in a binary tree, and write a function to accomplish this.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 2.622912698659835,
+    "diversity_scalar": 0.849079327720105
+  },
+  {
+    "qid": "125",
+    "turn": 1,
+    "prompt": "Analyze the scenario where the data structure is not a binary tree.",
+    "score_raw": 98.0,
+    "score_shaped": 98.0,
+    "entropy": 3.428093203507979,
+    "diversity_scalar": 0.6051003960578439
+  },
+  {
+    "qid": "126",
+    "turn": 0,
+    "prompt": "Implement a function returning the median of two sorted arrays of unequal lengths. The solution must not exceed O(n) time complexity and must use only O(1) auxiliary space.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 2.051933453077426,
+    "diversity_scalar": 0.660194174757615
+  },
+  {
+    "qid": "126",
+    "turn": 1,
+    "prompt": "Reflect on whether an implementation might exist that yields a more efficient time complexity.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.4061066851582837,
+    "diversity_scalar": 0.5573769421176162
+  },
+  {
+    "qid": "127",
+    "turn": 0,
+    "prompt": "Code a function to determine the majority element of an integer array; you must employ the Boyer-Moore Voting Algorithm to solve this.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.2127218780163296,
+    "diversity_scalar": 0.3333008636924591
+  },
+  {
+    "qid": "127",
+    "turn": 1,
+    "prompt": "How might we uncover the two elements that appear most often in the collection?",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.4097295915539276,
+    "diversity_scalar": 0.506377775513884
+  },
+  {
+    "qid": "128",
+    "turn": 0,
+    "prompt": "Explore the concept of full binary trees, where each vertex has exactly zero or two children. If B_n denotes the total number of full binary trees with n vertices, design a function that can calculate B_n.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.5544129811746124,
+    "diversity_scalar": 0.6457264957264969
+  },
+  {
+    "qid": "128",
+    "turn": 1,
+    "prompt": "Explore how the problem would evolve if the underlying structure shifted from a binary tree to a ternary tree.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.5802182953831405,
+    "diversity_scalar": 0.4824908749467245
+  },
+  {
+    "qid": "129",
+    "turn": 0,
+    "prompt": "Consider two sorted lists of sizes m and n. How would you design a function to identify the kth smallest element when these lists are merged, ensuring your approach maintains linear time complexity?",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.477140401869002,
+    "diversity_scalar": 0.6539456962098276
+  },
+  {
+    "qid": "129",
+    "turn": 1,
+    "prompt": "Identify an algorithm with improved time complexity and write its code, provided such an algorithm exists.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.512705052246258,
+    "diversity_scalar": 0.412028452901299
+  },
+  {
+    "qid": "130",
+    "turn": 0,
+    "prompt": "Explore how to identify the shared elements between two arrays in a program, ensuring that no additional data structures are utilized to solve this.",
+    "score_raw": 95.0,
+    "score_shaped": 95.0,
+    "entropy": 2.740850226017289,
+    "diversity_scalar": 0.8930678466076699
+  },
+  {
+    "qid": "130",
+    "turn": 1,
+    "prompt": "Given that you can now use auxiliary data structures, implement the solution with the best possible time complexity.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.3433024296039324,
+    "diversity_scalar": 0.5010626888953905
+  },
+  {
+    "qid": "131",
+    "turn": 0,
+    "prompt": "Consider the sentiment expressed in the following three movie reviews and assign each a rating from 1 to 5 (1 being very negative, 3 being neutral, and 5 being very positive). Reflect on the tone of each review to determine your score, and present your final ratings as a JSON array of integers. Reviews: 1. This movie released on Nov. 18, 2019, was phenomenal. The cinematography, the acting, the plot - everything was top-notch. 2. Never before have I been so disappointed with a movie. The plot was predictable and the characters were one-dimensional. In my opinion, this movie is the worst one to have been released in 2022. 3. The movie was okay. There were some parts I enjoyed, but there were also parts that felt lackluster. This is a movie that was released in Feb 2018 and seems to be quite ordinary.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.20333963559113,
+    "diversity_scalar": 0.36157796451915075
+  },
+  {
+    "qid": "131",
+    "turn": 1,
+    "prompt": "Update the earlier response by including the release date in the JSON content.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.2638590581645537,
+    "diversity_scalar": 0.5527057994006771
+  },
+  {
+    "qid": "132",
+    "turn": 0,
+    "prompt": "Categorize each of the four provided questions into one of the following: Literature, History, Science, or Art. Output exactly four lines. Each line must contain only the category name corresponding to the question, with no additional text or explanation.\n1. Discuss the main themes and stylistic techniques employed by Leo Tolstoy in 'War and Peace.' How do they align with the wider social context of 19th-century Russia?\n2. Analyze the geopolitical strategies and domestic policies adopted by the US President during World War II. How did these actions shape the post-war international order?\n3. Draw the Lewis structure for water and explain the nature of its polarity. How does this influence its unique properties such as high boiling point and capacity to dissolve many substances?\n4. Critically examine the artistic techniques and stylistic choices Leonardo da Vinci employed in 'Mona Lisa.' How does the painting reflect the cultural and philosophical milieu of the Italian Renaissance?",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 2.5062937711536657,
+    "diversity_scalar": 2.5002222514558525e-13
+  },
+  {
+    "qid": "132",
+    "turn": 1,
+    "prompt": "Edit your previous response by adding a highly relevant person to every point made.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.0642829492805173,
+    "diversity_scalar": 6.672440377997191e-14
+  },
+  {
+    "qid": "133",
+    "turn": 0,
+    "prompt": "Explore the texts below to find the main character, book title, author, and year of publication. Once discovered, share the details formatted as \"main character, book, author, year of publication\", dedicating a single line to each book.\na) In the realm of wizarding literature, a true standout is the work of J.K. Rowling. One of her books that left an indelible mark is 'Harry Potter and the Philosopher's Stone'. This iconic tale, published in 1997, tells the story of Harry, a young orphan who discovers his magical abilities on his 11th birthday. Soon, he finds himself at the Hogwarts School of Witchcraft and Wizardry, a place teeming with magic and adventure, located somewhere in Scotland.\nb) The magic of Middle-earth has entranced readers worldwide, thanks to the brilliance of J.R.R. Tolkien. In one of his seminal works, 'The Lord of the Rings: The Fellowship of the Ring', published in 1954, we meet Frodo Baggins, a brave hobbit tasked with the perilous quest of destroying the One Ring. The epic journey takes him from the peaceful Shire to the tumultuous regions of Middle-earth.\nc) In a galaxy far, far away, the imagination of L.E. Starlighter gives us 'The Prism Galaxy Chronicles: The Awakening of the Starcaster'. Published in 2028, the story is about Zylo, a humble spaceship mechanic, who unexpectedly discovers he's a Starcaster - a rare individual with the power to manipulate stardust. Set against the backdrop of an interstellar empire in turmoil, Zylo's destiny unfolds on numerous alien worlds, each with its unique cosmic charm.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.426243466853388,
+    "diversity_scalar": 3.5638159090467525e-14
+  },
+  {
+    "qid": "133",
+    "turn": 1,
+    "prompt": "Reimagine your previous response by presenting it as a JSON array, focusing specifically on books that came out after 1980.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.426780670862127,
+    "diversity_scalar": 0.1428571428571754
+  },
+  {
+    "qid": "134",
+    "turn": 0,
+    "prompt": "Using the data below, identify the firm that earned the most profit in 2021 and name its CEO:\na) Company X, with CEO Amy Williams, reported $30 billion in revenue and a $3 billion profit in 2021.\nb) Company Y, led by CEO Mark Thompson, posted a $60 billion revenue and a $6 billion profit in the same year.\nc) Company Z, under CEO Sarah Johnson, announced a $20 billion revenue and a $7 billion profit in 2021.\nd) Company W, managed by CEO James Smith, revealed a $300 billion revenue with a $21 billion profit in 2021.\ne) Company V, with CEO Lisa Brown, reported a $200 billion revenue and a $25 billion profit in 2021.\nf) Company U, under CEO John White, posted a $180 billion revenue and a $20 billion profit in the same year.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.1365146324328594,
+    "diversity_scalar": 0.40045698924733286
+  },
+  {
+    "qid": "134",
+    "turn": 1,
+    "prompt": "Looking at profit margins through the lens of the profit-to-revenue ratio, which company demonstrates the strongest performance?",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.401748045017461,
+    "diversity_scalar": 0.3877415458937268
+  },
+  {
+    "qid": "135",
+    "turn": 0,
+    "prompt": "Delve into the following descriptions to identify the nations, capital cities, and languages highlighted within. Please present your conclusions using a JSON format.\na) Amidst the idyllic vistas, Copenhagen, Denmark's capital, captivates visitors with its thriving art scene and the enchanting Danish language spoken by its inhabitants.\nb) Within the enchanting realm of Eldoria, one discovers Avalore, a grandiose city that emanates an ethereal aura. Lumina, a melodious language, serves as the principal mode of communication within this mystical abode.\nc) Nestled amidst a harmonious blend of age-old customs and contemporary wonders, Buenos Aires, the capital of Argentina, stands as a bustling metropolis. It is a vibrant hub where the expressive Spanish language holds sway over the city's inhabitants.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.021117031802546,
+    "diversity_scalar": 0.08611111111117083
+  },
+  {
+    "qid": "135",
+    "turn": 1,
+    "prompt": "Provide three similar examples using the YAML format.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.124729970406053,
+    "diversity_scalar": 0.8329049742110342
+  },
+  {
+    "qid": "136",
+    "turn": 0,
+    "prompt": "Please read the paragraph and tally the occurrences of the words \"Amazon\", \"river\", and \"you\". Provide the counts in the format \"word, number of appearances\", placing each word on a new line. Sort the lines by the number of appearances.\nThe Amazon, a mesmerizing expanse of nature's wonders, is home to the legendary Amazon River. Flowing through awe-inspiring landscapes like the Amazon rainforest, the river weaves its way through Brazil, Colombia, and Peru, giving life to countless creatures. From the mighty jaguars prowling the Amazon jungle to the vibrant macaws soaring above the canopy, this remarkable region teems with biodiversity. Deep within the river's currents, magnificent pink river dolphins gracefully glide alongside piranhas and electric eels. Along the riverbanks, you'll find bustling cities like Manaus, where the urban meets the wild, and Iquitos, a gateway to the heart of the Amazon rainforest. As you venture further, the Amazon River reveals hidden gems like the captivating Anavilhanas Archipelago, a mosaic of islands brimming with rare species. Embark on an adventure, explore the enchanting Amazon River, and immerse yourself in a world teeming with life and untamed beauty.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 1.8216332387858551,
+    "diversity_scalar": 0.666666666667
+  },
+  {
+    "qid": "136",
+    "turn": 1,
+    "prompt": "Execute the previous task again, strictly incorporating the words 'the', 'and', and 'to'.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 1.4078165354300367,
+    "diversity_scalar": 1.0
+  },
+  {
+    "qid": "137",
+    "turn": 0,
+    "prompt": "Read the news article below and extract the named entities, categorized into people, organizations, and locations. Format the output as a JSON dictionary containing three keys for the entity types, each associated with a list of strings for the entities. Yesterday, Adamson Emerson, the CEO of Faraday, and Dieter Zetsche, the CEO of Daimler AG, announced plans to build a new Gigafactory in Berlin. The facility will be a joint venture between Faraday and Daimler, producing electric vehicles and battery packs for both companies, creating thousands of job opportunities in the region. Emerson and Zetsche stated that the strategic location of Berlin, coupled with its skilled workforce and strong infrastructure, makes it an ideal choice for expansion. The new Gigafactory aims to meet the growing demand for electric vehicles in Europe and contribute to a sustainable future. Volkswagen CEO Herbert Diess welcomed the news, saying greater collaboration will benefit the auto industry's transition to e-mobility.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.200413109015075,
+    "diversity_scalar": 6.23945339839338e-14
+  },
+  {
+    "qid": "137",
+    "turn": 1,
+    "prompt": "Shorten the JSON object by changing each value to its first letter. Provide the output on one line without indentation or newlines.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 2.781203314704254,
+    "diversity_scalar": 0.666666666667
+  },
+  {
+    "qid": "138",
+    "turn": 0,
+    "prompt": "Reflect on the contradictory reviews provided below for the latest iPhone, Samsung Galaxy, and Google Pixel. Taking into account the varying strengths and weaknesses highlighted by each source, formulate a balanced overall rating between 1 and 10 (to one decimal place) for each smartphone. Return your conclusions formatted as a JSON object. Reviews: - TechRadar's review of the latest iPhone: The new iPhone is a stunning triumph of engineering that sets a new bar for smartphone performance and camera quality. However, the incremental design and high price mean it lacks the 'wow' factor of previous iPhones. Still, its power and intelligence are unrivaled. - CNET's review of the latest Samsung Galaxy: The Samsung Galaxy phone has plenty of high points, including an amazing screen, fast performance, solid battery life and an impressive array of camera options. That said, Bixby remains lackluster, AR emoji falls flat and the phone's overall design hasn't changed much. The new Galaxy is an amazing phone overall, but it has a few nagging weaknesses that keep it from achieving true greatness. - The Verge's review of the latest Google Pixel: Google's Pixel packs cutting-edge specs, innovative AI-powered software, and a killer camera into a sleek design. However, the phone has lackluster battery life, lacks expandable storage, and its performance stutters at times, especially considering its high price tag. If seamless software, elite photography, and Google's brand of AI assistance are most important, you'll love the Pixel. But the overall experience isn't as well-rounded as some competitors.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.147313807903234,
+    "diversity_scalar": 0.2964646464647114
+  },
+  {
+    "qid": "138",
+    "turn": 1,
+    "prompt": "Convert all numerical ratings to alphabetical ones. Ensure every phone name is written in capital letters.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.0791721076888687,
+    "diversity_scalar": 0.43304843304848556
+  },
+  {
+    "qid": "139",
+    "turn": 0,
+    "prompt": "Identify every distinct variable name present in each of the three provided equations. Output your findings strictly as a JSON string, ensuring each equation's variables occupy a separate line.\n```\n1) y = (3/4)x^3 - e^(2x) + sin(pi*x) - sqrt(7)\n2) 2A - B/(3+C) * sum(N=1 to 5; ln(N)^2) = 5D*integral(a=0 to pi; cos(comb(N=1 to 10; N*a)))\n3) E = m(c^2) + gamma*(v/d)/(-(alpha/2) + sqrt(beta^2 + (alpha/2)^2))\n```",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 2.710449636138488,
+    "diversity_scalar": 0.2333333333333745
+  },
+  {
+    "qid": "139",
+    "turn": 1,
+    "prompt": "Modify the order of the equations and change the variables to the sequence 'a', 'b', 'c', 'd', etc.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 2.275547570476197,
+    "diversity_scalar": 0.6666666666666945
+  },
+  {
+    "qid": "140",
+    "turn": 0,
+    "prompt": "Given the following records of stock prices, extract the highest and lowest closing prices for each month in the year 2022. Return the results as a CSV string, with one line allocated for each month.\nDate,Open,High,Low,Close,Volume\n2022-01-01,150.02,155.28,148.50,153.80,15678900\n2022-01-02,154.32,157.25,153.48,156.25,19874500\n2022-02-01,160.50,163.28,159.50,161.80,14326700\n2022-02-02,161.80,164.25,161.30,163.90,17689200\n2022-03-01,165.40,168.35,163.10,166.80,16253400\n2022-03-02,167.00,169.85,165.50,168.20,19568100 [v3]",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 2.9731763835891534,
+    "diversity_scalar": 0.5839947089947615
+  },
+  {
+    "qid": "140",
+    "turn": 1,
+    "prompt": "Consider the previous task anew, presenting your findings in JSON format and exploring the values once they are rounded to the nearest whole numbers.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.361493739255122,
+    "diversity_scalar": 0.8151529617695044
+  },
+  {
+    "qid": "141",
+    "turn": 0,
+    "prompt": "Explain what superposition is in quantum physics and describe its relationship to quantum entanglement.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.1408616066998643,
+    "diversity_scalar": 0.5366092650923929
+  },
+  {
+    "qid": "141",
+    "turn": 1,
+    "prompt": "Reflect on the unstated assumptions that guided your previous answer; how confident are you in the soundness of those assumptions?",
+    "score_raw": 95.0,
+    "score_shaped": 95.0,
+    "entropy": 3.14938316323796,
+    "diversity_scalar": 0.6607547170980231
+  },
+  {
+    "qid": "142",
+    "turn": 0,
+    "prompt": "Imagine a satellite orbiting the Earth in a circular path suddenly slows down. How might this reduction in speed affect its orbital radius and revolution period? Discuss the underlying physics principles that explain these changes.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.2474420286510277,
+    "diversity_scalar": 0.5320999213945544
+  },
+  {
+    "qid": "142",
+    "turn": 1,
+    "prompt": "Identify the boundary conditions and exceptional scenarios in your solution, and specify the precise handling logic for them.",
+    "score_raw": 98.0,
+    "score_shaped": 98.0,
+    "entropy": 3.368557466074307,
+    "diversity_scalar": 0.7011545799697906
+  },
+  {
+    "qid": "143",
+    "turn": 0,
+    "prompt": "Detail the two major phases of photosynthesis. You must identify where each phase occurs in the chloroplast, along with the specific inputs and outputs associated with both phases.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.2892607285291273,
+    "diversity_scalar": 0.4847239008445003
+  },
+  {
+    "qid": "143",
+    "turn": 1,
+    "prompt": "Provide a numerical estimate for the lifetime energy production of a tree through photosynthesis. Ensure you walk through your step-by-step reasoning thoroughly.",
+    "score_raw": 98.0,
+    "score_shaped": 98.0,
+    "entropy": 3.440912015225532,
+    "diversity_scalar": 0.6872934907102674
+  },
+  {
+    "qid": "144",
+    "turn": 0,
+    "prompt": "Explain the central dogma of molecular biology, describe the processes involved, and identify who named it.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.284393486012282,
+    "diversity_scalar": 0.5640034658318923
+  },
+  {
+    "qid": "144",
+    "turn": 1,
+    "prompt": "Look back at your last response; where might a fact be off, and how should it be corrected?",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.31556315625337,
+    "diversity_scalar": 0.5815660458931895
+  },
+  {
+    "qid": "145",
+    "turn": 0,
+    "prompt": "Reflect on the chemical process involving solid calcium carbonate and hydrochloric acid as they transform into aqueous calcium chloride, carbon dioxide, and water. Please describe the mechanism, provide the balanced equation, identify the category of this reaction, and discuss the sensory observations that would indicate the reaction is proceeding.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.2711418699922397,
+    "diversity_scalar": 0.5448914639537995
+  },
+  {
+    "qid": "145",
+    "turn": 1,
+    "prompt": "How might one go about reversing this process, considering different possible perspectives?",
+    "score_raw": 98.0,
+    "score_shaped": 98.0,
+    "entropy": 3.225867799595875,
+    "diversity_scalar": 0.6803687604269499
+  },
+  {
+    "qid": "146",
+    "turn": 0,
+    "prompt": "Define the differences between exothermic and endothermic reactions. State the exact criteria used to differentiate them, and provide one real-world example that demonstrates these concepts.",
+    "score_raw": 98.0,
+    "score_shaped": 98.0,
+    "entropy": 3.2389042043442156,
+    "diversity_scalar": 0.6478857399910046
+  },
+  {
+    "qid": "146",
+    "turn": 1,
+    "prompt": "Determine whether a process can involve both reactions. Provide exactly one example of such a process.",
+    "score_raw": 95.0,
+    "score_shaped": 95.0,
+    "entropy": 3.192287537341579,
+    "diversity_scalar": 0.7795022250933116
+  },
+  {
+    "qid": "147",
+    "turn": 0,
+    "prompt": "Vega is planning a 1.8 km bridge over the Vegona River in an area with a history of high-magnitude earthquakes. What construction strategies and design philosophies should be explored to best navigate these seismic conditions?",
+    "score_raw": 98.0,
+    "score_shaped": 98.0,
+    "entropy": 3.244523477234175,
+    "diversity_scalar": 0.6683894582337994
+  },
+  {
+    "qid": "147",
+    "turn": 1,
+    "prompt": "Reflecting on the solution you've provided, what do you see as its most significant shortcomings? Explore these disadvantages by working through calculations that reveal their numerical impact.",
+    "score_raw": 98.0,
+    "score_shaped": 98.0,
+    "entropy": 3.467496241579227,
+    "diversity_scalar": 0.7544288520657011
+  },
+  {
+    "qid": "148",
+    "turn": 0,
+    "prompt": "Consider the challenge of building a solar-powered water heating system for residential use. What key components and considerations would shape your design, and how would you map out a five-step workflow to execute it?",
+    "score_raw": 98.0,
+    "score_shaped": 98.0,
+    "entropy": 3.2586751982352715,
+    "diversity_scalar": 0.5992112948839089
+  },
+  {
+    "qid": "148",
+    "turn": 1,
+    "prompt": "Determine the projected implementation cost for this system given a building capacity of 100 people.",
+    "score_raw": 95.0,
+    "score_shaped": 95.0,
+    "entropy": 3.4464819519802106,
+    "diversity_scalar": 0.6761606459629185
+  },
+  {
+    "qid": "149",
+    "turn": 0,
+    "prompt": "Give an overview of the machine learning concept. Discuss the differences between supervised, unsupervised, and reinforcement learning, ensuring you provide a real-world example for every type mentioned.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.205177090914281,
+    "diversity_scalar": 0.5532845205735438
+  },
+  {
+    "qid": "149",
+    "turn": 1,
+    "prompt": "Determine whether the reinforcement learning example you just provided can be solved using supervised learning instead.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.1530124166200033,
+    "diversity_scalar": 0.6301200384564143
+  },
+  {
+    "qid": "150",
+    "turn": 0,
+    "prompt": "Enumerate three concrete impacts of the Alps and Rhine River on human settlement and agriculture within Western Europe.",
+    "score_raw": 98.0,
+    "score_shaped": 98.0,
+    "entropy": 3.1244396909681895,
+    "diversity_scalar": 0.7103414112764929
+  },
+  {
+    "qid": "150",
+    "turn": 1,
+    "prompt": "Propose a concrete and simple experimental design to validate the first impact.",
+    "score_raw": 95.0,
+    "score_shaped": 95.0,
+    "entropy": 3.2364262620374835,
+    "diversity_scalar": 0.7442740910701818
+  },
+  {
+    "qid": "151",
+    "turn": 0,
+    "prompt": "Explore the dynamic relationships that exist between GDP, inflation, and unemployment rates. How do fiscal and monetary policies shape and influence these interconnected economic indicators?",
+    "score_raw": 98.0,
+    "score_shaped": 98.0,
+    "entropy": 3.244623439316104,
+    "diversity_scalar": 0.5897867391307744
+  },
+  {
+    "qid": "151",
+    "turn": 1,
+    "prompt": "Rewrite the explanation of these points using only vocabulary and concepts appropriate for a five-year-old.",
+    "score_raw": 98.0,
+    "score_shaped": 98.0,
+    "entropy": 3.2376613805440915,
+    "diversity_scalar": 0.49981591792835484
+  },
+  {
+    "qid": "152",
+    "turn": 0,
+    "prompt": "Reflect on the ways our journey through different phases of life transforms our lived experience and perception of time passing and our own finitude.",
+    "score_raw": 98.0,
+    "score_shaped": 98.0,
+    "entropy": 3.068414236660033,
+    "diversity_scalar": 0.7234750145048022
+  },
+  {
+    "qid": "152",
+    "turn": 1,
+    "prompt": "Draft a poem using allegory to represent the concepts outlined above.",
+    "score_raw": 92.0,
+    "score_shaped": 92.0,
+    "entropy": 2.502032606040601,
+    "diversity_scalar": 0.9635627530364373
+  },
+  {
+    "qid": "153",
+    "turn": 0,
+    "prompt": "Explore the relationship between antitrust laws and market competition dynamics. How do the antitrust regimes in the US and China differ in their approach and consequences? Bring in case studies to reflect on these divergent paths.",
+    "score_raw": 96.0,
+    "score_shaped": 96.0,
+    "entropy": 3.2311478033486813,
+    "diversity_scalar": 0.7056521428892832
+  },
+  {
+    "qid": "153",
+    "turn": 1,
+    "prompt": "Delve into a case study of your choice and offer a detailed explanation of its contents.",
+    "score_raw": 98.0,
+    "score_shaped": 98.0,
+    "entropy": 3.2317119583345697,
+    "diversity_scalar": 0.7989896741572501
+  },
+  {
+    "qid": "154",
+    "turn": 0,
+    "prompt": "Construct a lesson plan that brings the Opium Wars between China and Britain to life for 9th and 10th grade history students through the lens of theater, mime, or drama. The unit should unfold over three days, dedicating 45 minutes to each class period. Consider how these performance arts can deepen their historical understanding.",
+    "score_raw": 98.0,
+    "score_shaped": 98.0,
+    "entropy": 3.346383188041962,
+    "diversity_scalar": 0.719430776768975
+  },
+  {
+    "qid": "154",
+    "turn": 1,
+    "prompt": "Elaborate on the Day 1 schedule and provide three associated homework questions.",
+    "score_raw": 98.0,
+    "score_shaped": 98.0,
+    "entropy": 3.320332337936056,
+    "diversity_scalar": 0.6174198569198174
+  },
+  {
+    "qid": "155",
+    "turn": 0,
+    "prompt": "Identify 5 distinct masterpieces of art and assign a specific interactive adaptation idea for children to each one.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.2287687694167846,
+    "diversity_scalar": 0.7105227437466984
+  },
+  {
+    "qid": "155",
+    "turn": 1,
+    "prompt": "How might you develop a concrete plan for your second example? As you explore this, please incorporate budget estimates.",
+    "score_raw": 95.0,
+    "score_shaped": 95.0,
+    "entropy": 3.460605672300711,
+    "diversity_scalar": 0.7148432403914945
+  },
+  {
+    "qid": "156",
+    "turn": 0,
+    "prompt": "Define the base rate fallacy. Supply exactly five specific examples of politicians utilizing this fallacy for campaign purposes.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.197751908417184,
+    "diversity_scalar": 0.6922556922903054
+  },
+  {
+    "qid": "156",
+    "turn": 1,
+    "prompt": "Construct a detailed election campaign plan strictly adhering to the structure of the first example.",
+    "score_raw": 95.0,
+    "score_shaped": 95.0,
+    "entropy": 3.098403654554989,
+    "diversity_scalar": 0.7783237309453707
+  },
+  {
+    "qid": "157",
+    "turn": 0,
+    "prompt": "Provide a description of five key principles for evaluating an argument in analytical writing.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.1502034155733885,
+    "diversity_scalar": 0.6813956506057739
+  },
+  {
+    "qid": "157",
+    "turn": 1,
+    "prompt": "Identify the specific evidence required to evaluate the argument, and state explicitly how this evidence would either weaken or strengthen the argument's conclusion.",
+    "score_raw": 98.0,
+    "score_shaped": 98.0,
+    "entropy": 3.158898272489574,
+    "diversity_scalar": 0.7887459336791626
+  },
+  {
+    "qid": "158",
+    "turn": 0,
+    "prompt": "Reflect on the approaches Socrates took to question the established ideas of his era, and describe how these methods functioned.",
+    "score_raw": 98.0,
+    "score_shaped": 98.0,
+    "entropy": 3.1392790958307253,
+    "diversity_scalar": 0.6823863128156136
+  },
+  {
+    "qid": "158",
+    "turn": 1,
+    "prompt": "Generate a modern-day debate transcript between Socrates and Bill Gates focusing strictly on generative AI's role in education.",
+    "score_raw": 98.0,
+    "score_shaped": 98.0,
+    "entropy": 3.1882737836370088,
+    "diversity_scalar": 0.7393540678412029
+  },
+  {
+    "qid": "159",
+    "turn": 0,
+    "prompt": "How do cultural perspectives and traditional etiquette norms influence the way business is conducted in Japan?",
+    "score_raw": 98.0,
+    "score_shaped": 98.0,
+    "entropy": 3.192407960800406,
+    "diversity_scalar": 0.6698517902904554
+  },
+  {
+    "qid": "159",
+    "turn": 1,
+    "prompt": "Consider the process of welcoming new employees to a car wash in Japan through a video script. In what ways can you bring the above etiquette norms to the forefront of this training material?",
+    "score_raw": 98.0,
+    "score_shaped": 98.0,
+    "entropy": 3.4173036271735455,
+    "diversity_scalar": 0.7288721144929875
+  },
+  {
+    "qid": "160",
+    "turn": 0,
+    "prompt": "Identify five documentary films that have won major awards. Supply a short background summary for each one, focusing on why they are essential study material for new filmmakers.",
+    "score_raw": 100.0,
+    "score_shaped": 100.0,
+    "entropy": 3.254559963412158,
+    "diversity_scalar": 0.7060496419783776
+  },
+  {
+    "qid": "160",
+    "turn": 1,
+    "prompt": "Generate a concise, persuasive pitch for a movie about overcoming adversity, ensuring it mirrors the specific atmosphere of the first film.",
+    "score_raw": 98.0,
+    "score_shaped": 98.0,
+    "entropy": 3.092435724438895,
+    "diversity_scalar": 0.7976040435067029
+  }
+]
