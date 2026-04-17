@@ -261,7 +261,7 @@ Typical artifacts:
 ---
 
 
-## Supplement: `best_prompt_scores_spo/opro/ours.json` (Turn=2 Comparison)
+## Supplement: a smallest verification case
 
 We provide a tiny verification based on the mid-term result for `turn=2` and single rollout comparison for clearity, plus related three result files at the repository root:
 
