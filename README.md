@@ -263,7 +263,7 @@ Typical artifacts:
 
 ## Supplement: `best_prompt_scores_spo/opro/ours.json` (Turn=2 Comparison)
 
-We provide three result files at the repository root:
+We provide a tiny verification based on the mid-term result for `turn=2` and single rollout comparison for clearity, plus related three result files at the repository root:
 
 - `best_prompt_scores_spo.json`
 - `best_prompt_scores_opro.json`
