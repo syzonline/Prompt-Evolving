@@ -63,13 +63,13 @@ pip install sentence-transformers numpy torch
 
 Edit `config/models.yaml` to point to your **OpenAI-compatible** chat endpoints.
 
-Example (vLLM-style OpenAI API server):
+Example (OpenAI-compatible self-hosted endpoint):
 
 ```yaml
 execute_model:
-  base_url: "http://127.0.0.1:8000/v1"
+  base_url: "http://service.org.cn/v1"
   api_key: "EMPTY"
-  model: "Qwen2.5-7B-Instruct"
+  model: "deepseek-v3.2"
   timeout_s: 120
   max_retries: 3
 
@@ -134,6 +134,45 @@ python -m scripts.run_optimizer \
   --project writing_demo_entropy \
   --config config/models.yaml
 ```
+
+### MT-Bench batch mode (auto download + local cache reuse)
+
+```bash
+python -m scripts.run_optimizer \
+  --mode current \
+  --dataset mt-bench \
+  --mtbench-dir data/mt-bench \
+  --mtbench-split train \
+  --project mtbench_current \
+  --config config/models.yaml \
+  --output-dir workspace/mtbench_current \
+  --log-file workspace/mtbench_current/run.log
+```
+
+If `--mtbench-dir` already contains cached `mt_bench_<split>.jsonl`, it is loaded directly (no re-download).
+
+
+### One-command MT-Bench suite (Original / SPO / OPRO / Ours)
+
+Use `scripts/run_mtbench_suite.py` to run four strategies with a single command:
+
+```bash
+python -m scripts.run_mtbench_suite \
+  --template writing-demo/demo.yaml \
+  --config config/models.yaml \
+  --mtbench-dir data/mt-bench \
+  --mtbench-split train \
+  --output-root workspace/mtbench_suite
+```
+
+Mode aliases:
+
+* `original` -> `none` (no optimization, one-pass baseline)
+* `spo` -> SPO-like
+* `opro` -> OPRO-like
+* `ours` -> `current`
+
+Per-mode logs/results are separated into timestamped subfolders under `--output-root`, and each run still writes `run_config.json`, `best_prompt_scores.json`, `best_prompts_by_turn.json`, plus detailed rollout logs.
 
 ### Modes
 

@@ -128,6 +128,7 @@ class PromptOptimizer:
         self.global_turn_memory: Dict[int, List[Tuple[str, float]]] = {}
         self.system_prompt = self.cfg.get("system_prompt", "You are a helpful assistant.")
         self.eval_system_prompt = "Output a short JSON with keys: winner (A|B|T), reasons, alignment_points (array)."
+        self.strategy_family = str(self.cfg.get("strategy_family", "spo")).lower().strip()
 
     # ---------- public ----------
     def optimize(self, qa: List[Dict[str, Any]]) -> pathlib.Path:
@@ -329,7 +330,7 @@ class PromptOptimizer:
 
     # ---------- SPO/entropy: multi-candidate + pairwise + feedback ----------
     def _is_spo_family(self) -> bool:
-        return True
+        return self.strategy_family == "spo"
 
     def _spo_candidates_multi(self, base: str, guidance: Dict[str, Any], N: int, round_id: int, qid: str, turn: int) -> List[str]:
         base = (base or "").strip()
@@ -610,6 +611,7 @@ class PromptOptimizer:
     def _persist_best_run(self, best_dir: pathlib.Path, qa: List[Dict[str, Any]], run_state: RunState) -> None:
         convo_dump: Dict[str, Any] = {}
         best_prompts: Dict[str, Dict[int, str]] = {}
+        flat_rows: List[Dict[str, Any]] = []
         for item in qa:
             qid = item["qid"]; turns = item["turns"]; convo_dump[qid] = []
             for t in range(len(turns)):
@@ -621,8 +623,18 @@ class PromptOptimizer:
                     "diversity_scalar": rec.diversity_scalar, "score_shaped": rec.score_shaped,
                 })
                 best_prompts.setdefault(qid, {})[t] = rec.rewrite
+                flat_rows.append({
+                    "qid": qid,
+                    "turn": t,
+                    "prompt": rec.rewrite,
+                    "score_raw": rec.score_raw,
+                    "score_shaped": rec.score_shaped,
+                    "entropy": rec.entropy,
+                    "diversity_scalar": rec.diversity_scalar,
+                })
         self._dump_json(best_dir / "dialogue_trace.json", convo_dump)
         self._dump_json(self.workdir / "best_prompts_by_turn.json", best_prompts)
+        self._dump_json(self.workdir / "best_prompt_scores.json", flat_rows)
 
     def _dump_json(self, path: pathlib.Path, obj: Any) -> None:
         try:
