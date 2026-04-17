@@ -260,6 +260,46 @@ Typical artifacts:
 
 ---
 
+
+## Supplement: `best_prompt_scores_spo/opro/ours.json` (Turn=2 Comparison)
+
+We provide three result files at the repository root:
+
+- `best_prompt_scores_spo.json`
+- `best_prompt_scores_opro.json`
+- `best_prompt_scores_ours.json`
+
+Source/setup summary (for all three files):
+
+- Generator model: **GLM-5**
+- Judge model: **GLM-5**
+- Setting: record optimization outcomes at **turn=2** (implemented as 0-based `turn=1` in logs)
+- Default metric used below: **`score_shaped`**
+
+### Win-rate comparison on 4 MT-Bench subsets (`score_shaped`, turn=2)
+
+Each cell is `Win / Tie / Lose` in pairwise item-level comparison.
+
+| Subset | Ours vs SPO | Ours vs OPRO | OPRO vs SPO |
+|---|---:|---:|---:|
+| Writing | 80.0% / 0.0% / 20.0% | 80.0% / 0.0% / 20.0% | 50.0% / 40.0% / 10.0% |
+| Roleplay | 50.0% / 10.0% / 40.0% | 50.0% / 0.0% / 50.0% | 90.0% / 0.0% / 10.0% |
+| Humanities | 60.0% / 0.0% / 40.0% | 60.0% / 0.0% / 40.0% | 70.0% / 30.0% / 0.0% |
+| STEM | 60.0% / 0.0% / 40.0% | 60.0% / 0.0% / 40.0% | 80.0% / 20.0% / 0.0% |
+
+### Reproducible analysis script
+
+Use the script below to reproduce the table from the three existing files:
+
+```bash
+python -m scripts.analyze_best_prompt_scores   --spo best_prompt_scores_spo.json   --opro best_prompt_scores_opro.json   --ours best_prompt_scores_ours.json   --score-field score_shaped   --turn 1
+```
+
+Notes:
+
+- `--turn 1` means the second turn (`turn=2`) because turn index is 0-based.
+- You can switch to raw-score analysis with `--score-field score_raw`.
+
 ## Post-hoc Analysis
 
 ### Compare multiple runs in a workspace
